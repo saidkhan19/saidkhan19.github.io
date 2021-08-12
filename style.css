@@ -1,0 +1,232 @@
+:root {
+    --very-dark-magenta: hsl(300, 43%, 22%);
+    --soft-pink: hsl(333, 80%, 67%);
+    --dark-grayish-magenta: hsl(303, 10%, 53%);
+    --light-grayish-magenta: hsl(300, 24%, 96%);
+    --white: hsl(0, 0%, 100%);
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    background-color: var(--white);
+}
+
+.content {
+    width: 80%;
+    max-width: 1152px;
+    height: 100%;
+    margin: 0 auto;
+    font-family: 'Spartan', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--dark-grayish-magenta);
+}
+
+@media (max-width: 960px) {
+    .content {
+        width: 90%;
+    }
+}
+
+.container {
+    margin-top: 100px;
+    display: flex;
+}
+
+.r_card {
+    width: 80%;
+    min-width: 320px;
+    margin-top: 15px;
+    border-radius: 10px;
+    color: var(--very-dark-magenta);
+    font-weight: 700;
+    background-color: var(--light-grayish-magenta);
+    background-image:
+        url(images/icon-star.svg),
+        url(images/icon-star.svg),
+        url(images/icon-star.svg),
+        url(images/icon-star.svg),
+        url(images/icon-star.svg);
+    background-repeat: no-repeat;
+}
+
+@media (min-width: 376px) {
+    body {
+        background-image: url(images/bg-pattern-top-desktop.svg), url(images/bg-pattern-bottom-desktop.svg);
+        background-position: 0% 0%, 100% 100%;
+        background-repeat: no-repeat;
+    }
+
+    .r_card {
+        height: 50px;
+        padding-left: 180px;
+
+        background-position-x: 30px, 55px, 80px, 105px, 130px;
+        background-position-y: 15px;
+
+        display: flex;
+        align-items: center;
+    }
+}
+
+@media (min-width: 581px) {
+    .container .info {
+        flex: 0 1 40%;
+        margin-right: auto;
+    }
+    
+    .container .rates {
+        flex: 0 1 50%;
+    }
+
+    .rates > :nth-child(1) {
+        margin-top: 35px;
+        margin-right: auto;
+    }
+    .rates > :nth-child(2) {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .rates > :nth-child(3) {
+        margin-left: auto;
+    }
+}
+
+.info h1 {
+    font-size: 36px;
+    margin-bottom: 0;
+    color: var(--very-dark-magenta);
+}
+
+.customers {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card {
+    min-width: 200px;
+    padding: 30px;
+    border-radius: 10px;
+    color: var(--light-grayish-magenta);
+    font-weight: 400;
+
+    background-color: var(--very-dark-magenta);
+    
+    flex: 1;
+}
+
+.c_info {
+    height: 40px;
+    display: flex;
+    gap: 20px;
+}
+
+.c_info > h5 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.c_info > img {
+    max-width: 100%;
+    max-height: 100%;
+
+    border-radius: 50%;
+}
+
+.c_info > h5 span {
+    margin-top: 3px;
+    font-weight: 400;
+    color: var(--soft-pink);
+}
+
+.card > p {
+    margin-top: 30px;
+}
+
+@media (min-width: 426px) {
+    .customers {
+        margin-top: 60px;
+        margin-bottom: 100px;
+        gap: 2rem;
+    }
+
+    .customers > :nth-child(2) {
+        position: relative;
+        top: 20px;
+    }
+    .customers > :nth-child(3) {
+        position: relative;
+        top: 40px;
+    }
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+@media (max-width: 580px) {
+    .container {
+        margin-top: 70px;
+        flex-wrap: wrap;
+        text-align: center;
+    }
+
+    .container > * {
+        flex: 1;
+    }
+
+    .rates > * {
+        margin: 15px auto;
+    }
+
+    .info h1 {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (max-width: 425px) {
+    .customers {
+        gap: 1rem;
+        margin-top: 30px;
+        margin-bottom: 50px;
+    }
+}
+
+@media (max-width: 375px) {
+    body {
+        background-image: url(images/bg-pattern-top-mobile.svg), url(images/bg-pattern-bottom-mobile.svg);
+        background-position: 0% 0%, 100% 100%;
+        background-repeat: no-repeat;
+    }
+
+    .info p {
+        margin: 15px;
+    }
+
+    .r_card {
+        height: 70px;
+        padding-top: 40px;
+
+        background-position-x: 110px, 135px, 160px, 185px, 210px;
+        background-position-y: 15px;
+    }
+}
